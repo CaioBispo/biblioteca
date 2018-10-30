@@ -1,0 +1,22 @@
+<table border='1' Ngif="livros">
+  <th>Titulo</th>
+  <th>Data</th>
+  <th>Autor</th>
+  <th>Pseudonimo</th>
+  <th>Categoria</th>
+  <th colspan="2">Ações</th>
+
+  <tbody>
+    <tr *ngFor="let l of livros">
+      <td>{{l.titulo}}</td>
+      <td>{{l.data}}</td>
+      <td>{{l.autor.nome}}</td>
+      <td>{{l.autor.pseudonimo}}</td>
+      <td>{{l.categoria.descricao}}</td>
+      <td><button (click)="excluir(l.id)">E</button></td>
+      <td><button (click)="setLivro(l)" [routerLink]="['/livro/inserir']">A</button></td>
+    </tr>
+
+
+  </tbody>
+</table>

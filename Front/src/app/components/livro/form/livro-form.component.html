@@ -1,0 +1,27 @@
+<table>
+  <tr>
+    <td>Titulo</td>
+    <td><input type='text' [(ngModel)]='livro.titulo' /></td>
+  </tr>
+  <tr>
+    <td>Data</td>
+    <td><input type='text' [(ngModel)]='livro.data' /></td>
+  </tr>
+  <tr>
+    <td>Autor</td>
+    <select [(ngModel)]='livro.autor.id'>
+      <option *ngFor='let autor of autores' value='{{autor.id}}'>{{autor.nome}}</option>
+    </select>
+  </tr>
+  <tr>
+    <td>Categoria</td>
+    <td>
+      <select [(ngModel)]='livro.categoria.id'>
+        <option *ngFor="let categoria of categorias" value='{{categoria.id}}'>{{categoria.descricao}}</option>
+      </select>
+    </td>
+  </tr>
+</table>
+<div>
+  <button (click)='addLivro()'>Salvar</button>
+</div>
